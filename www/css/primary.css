@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 /**
  * The contents of this file is included on the generated
@@ -8,6 +12,11 @@
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
 html {

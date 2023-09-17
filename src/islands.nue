@@ -34,3 +34,31 @@
   </script>
 
 </dialog>
+
+
+<div @name="select-dropdown" id="large" class="flex relative">
+  <ul :if="isOpen" class="w-60 h-52 shadow-md border-2 border-gray-700 rounded-lg absolute top-16 -left-4">
+    <li :for="el in options" :value="el.value" @click="selectItem(el)" class="p-3 text-left h-14 flex items-center w-full hover:bg-slate-200 transition-all duration-100 text-2xl cursor-pointer">{ el.label } <span class="mr-5" :if="selected == el.value">✔</span></li>
+  </ul>
+
+  <button @click="open" class="bg-white border-2 border-gray-700 flex justify-around text-3xl font-semibold text-gray-700 rounded-lg py-2 px-8 hover:brightness-90">
+    { selectedLabel }
+  </button>
+
+  <script>
+    constructor() {
+      this.selectedLabel = "Select a Country";
+      this.isOpen = false;
+    }
+
+    open() {
+      this.isOpen = !this.isOpen;
+    }
+
+    selectItem(el) {
+      this.selected = el.value;
+      this.selectedLabel = el.label;
+      console.log("Selecting", this.selectedLabel);
+    }
+  </script>
+</div>

@@ -7,23 +7,27 @@
   <link rel="shortcut icon" href="{ favicon }">
   <title>{ title }</title>
   <style>{ primary_css }</style>
+  <link rel="stylesheet" fetchpriority="high" href="css/output.css">
 
   <!-- header component (server-side) -->
   <site-header :logo="logo" :github="github"/>
 
-  <main>
-    <header>
+  <main class="w-full h-full flex items-center justify-center">
+    <!-- <header>
       <h1>{ heading }</h1>
       <p>{ description }</p>
     </header>
-
     <article>
       <item-list :items="projects" class="grid"/>
     </article>
 
     <footer>
       <img :src="favicon" class="icon">
-    </footer>
+    </footer> -->
+
+    <article>
+      <select-dropdown :options="options" />
+    </article>
   </main>
 
   <!-- theme selector dialog (client-side component)-->
@@ -34,6 +38,5 @@
 
   <!-- secondary CSS -->
   <link :for="href in secondary_css" :href="href" rel="stylesheet" fetchpriority="low">
-
 </html>
 

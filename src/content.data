@@ -31,3 +31,11 @@ themes:
 secondary_css:
   - css/themes.css
   - css/dialog.css
+
+options:
+  - value: US
+    label: United States
+  - value: FI
+    label: Finland
+  - value: FR
+    label: France
